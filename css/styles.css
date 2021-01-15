@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid grey;
+  width: 700px;
+  height: 1400px;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid green;
+  font-size: 25px;
+}
+
+.frog {
+  background-color: chartreuse;
+  background-size: contain;
+}

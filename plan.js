@@ -4,9 +4,10 @@ let displayPoints = document.querySelector('.showPoints')//DOMelement - necessar
 let playerPosition = 86 //relates to index of cell array where player starts on the board, will be used to keep track of the frog too
 let logPosition = null
 const grid  = document.querySelector('.grid')//relates to container div for whole grid html element with grid class 
-const width = 7 //grid height
-const height = 14 //grid width
+const width = 7 
+const height = 14 
 const cells  =  [] //a single array of dom elements
+
 
 //? Generate the grid - adjust css .grid to make this work
 //put inside a page load event listener
@@ -29,8 +30,7 @@ trafficAppears(cells)
 logAppears(cells)
 collisionDetection(cells, logPosition, playerPosition)
 
-//add some basic css to define road, river, home and statusBar
-function gridStyling(index, cell) {
+function gridStyling(index, cell) {//add some basic css to define road, river, home and statusBar
   if(index >= 49 && index <= 83){ //add road styling
     cell.classList.add('road')
   }
@@ -95,10 +95,7 @@ function generatePoints(playerPosition, points){ //add, remove, display points
   if(cells[playerPosition].classList.contains('home')){ //if frog position has the class home
     console.log('froggy reached home')
     points=+ 100 //add 100 points 
-    cells[playerPosition].classList.remove('frog')//remove frog
-    cells[playerPosition].classList.add('frogReachedHome')//update cell with winning frog  
-    // cells[87].classList.add('frog')
-
+    cells[playerPosition].classList.add('frogReachedHome')//update cell with winning frog
     //reset frog to starting position 
   }
   // else if frog moves forward 
@@ -126,7 +123,7 @@ function trafficAppears() { //car loop (one row)
 
 function logAppears(cells){ //log loop (one row)
   //log starting point
-  let logPosition = [27]
+  let logPosition = 27
   let displayLog = cells[logPosition].classList.add('log') //dom element for starting cell
   //log loop across row
   const intervalId = setInterval(() => { 

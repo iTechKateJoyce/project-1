@@ -26,6 +26,47 @@ body {
 }
 
 .frog {
-  background-color: chartreuse;
+  background-image: url('https://image.freepik.com/free-vector/cute-cartoon-frog_160606-343.jpg');
   background-size: contain;
+}
+
+.frogReachedHome {
+  background-image: url('https://banner2.cleanpng.com/20180511/qqq/kisspng-the-frog-prince-true-frog-5af52aaaaec407.1051844115260166827159.jpg');
+  background-size: contain;
+}
+
+.road {
+  background-color: rgb(208, 203, 203);
+}
+
+.river {
+  background-color: rgb(0, 217, 255);
+}
+
+.statusBar {
+  background-color: black;
+  color: beige;
+}
+
+.home {
+  background-color: khaki;
+}
+
+.timer {
+  background-image: url('https://banner2.cleanpng.com/20180614/gi/kisspng-alarm-clocks-computer-icons-flat-design-cartoon-sharing-5b222cf9b52252.1682352215289663937419.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.showPoints {
+  color: green;
+}
+.car {
+  background-color: red;
+}
+.log {
+  background-color:saddlebrown;
+}
+.frogOnLog {
+  background-image: url('        console.log(logPosition)');
 }

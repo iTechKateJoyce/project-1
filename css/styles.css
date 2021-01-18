@@ -25,8 +25,8 @@ body {
   font-size: 25px;
 }
 
-.frog {
-  background-image: url('https://image.freepik.com/free-vector/cute-cartoon-frog_160606-343.jpg');
+.grid .frog {
+  background-color: chartreuse;
   background-size: contain;
 }
 
@@ -61,12 +61,14 @@ body {
 .showPoints {
   color: green;
 }
-.car {
-  background-color: red;
+
+.carL, .carR{
+  background-color: hotpink;
 }
+
 .log {
   background-color:saddlebrown;
 }
 .frogOnLog {
-  background-image: url('        console.log(logPosition)');
+
 }

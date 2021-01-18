@@ -26,13 +26,16 @@ body {
 }
 
 .grid .frog {
-  background-color: chartreuse;
+  background-image: url('https://www.flaticon.com/svg/vstatic/svg/346/346211.svg?token=exp=1610987875~hmac=54b41eb2ce031df8cadf678caefcbec6');
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .frogReachedHome {
-  background-image: url('https://banner2.cleanpng.com/20180511/qqq/kisspng-the-frog-prince-true-frog-5af52aaaaec407.1051844115260166827159.jpg');
+  background-image:url('https://www.flaticon.com/svg/vstatic/svg/346/346262.svg?token=exp=1610989765~hmac=d7c77c9ffce011a975d3181713eba879');
   background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 
 .road {
@@ -49,17 +52,16 @@ body {
 }
 
 .home {
-  background-color: khaki;
+  background-color: green;
+  border-radius: 50%;
 }
 
-.timer {
-  background-image: url('https://banner2.cleanpng.com/20180614/gi/kisspng-alarm-clocks-computer-icons-flat-design-cartoon-sharing-5b222cf9b52252.1682352215289663937419.jpg');
-  background-size: cover;
-  background-position: center;
-}
+.timer, .points, .lives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.showPoints {
-  color: green;
+
 }
 
 .carL, .carR{
@@ -71,4 +73,14 @@ body {
 }
 .frogOnLog {
 
+}
+
+.lives{
+  display: flex;
+  flex-direction: column;
+}
+.displayHearts{
+  display: flex;
+  flex-direction: row;
+  width: 100px;
 }

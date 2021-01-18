@@ -1,36 +1,33 @@
 let lives = 3  
 let points = 0 
-let displayPoints = document.querySelector('.showPoints')//DOMelement - necessary here?
 let playerPosition = 93 //relates to index of cell array where player starts on the board, will be used to keep track of the frog too
 let logPosition = null
 const grid  = document.querySelector('.grid')//relates to container div for whole grid html element with grid class 
 const width = 9 
 const height = 12 
 const cells  =  [] //a single array of dom elements
-// const carsRight = Array.from(document.querySelectorAll('.carsRight'))
-// const carsLeft = Array.from(document.querySelectorAll('.carsLeft'))
-// let carPositions = {}
 let carsRight = [72, 75, 78]//indicies of car starting point
 let carsLeft = [62, 59, 56]//indicies of car starting point
-
+const heart = '&#128150;'
 //? Generate the grid
-//put inside a page load event listener, call the funciton 
+
 for (let index = 0; index < width * height; index++) {
   // Generate each element
   const cell = document.createElement('div')
   cell.classList.add('cell')
   grid.appendChild(cell)
   cells.push(cell)
-  // Number each cell by its index.
-  cell.innerHTML = index
-  cell.id = index
+  
+  cell.innerHTML = index // Number each cell by its index.
+  cell.id = index //adds an individual id to each cell - remove if N/A
   // Set the width and height of my cells
   cell.style.width = `${100 / width}%`
   cell.style.height = `${100 / height}%`
-  //adds background styling to grid cells 
-  gridStyling(index, cell)
+  
+  gridStyling(index, cell)//adds background styling to grid cells 
+  displayTimer()//displays countdown timer in grid
 }
-//add css styling to the grid upon creation includes: road, river, home, cars, logs. Consider refactoring to a switch statement here
+
 function gridStyling(index, cell) {
   if(index >= 54 && index <= 89){ //add road styling
     cell.classList.add('road')
@@ -58,14 +55,47 @@ function gridStyling(index, cell) {
   }
   //add points display
   else if(index === 4){
-    // cell.classList.add('showPoints')
+    cell.classList.add('points')
     cell.innerHTML = 'POINTS'
   }
   else if(index === 8){
-    // cell.classList.add('lives')
-    cell.innerHTML = 'LIVES'
+    cell.classList.add('lives')
+    // cell.innerHTML = 
+    
   }
 }
+//display current level score for player
+const displayScore = document.querySelector('.points')//grabs the points cell element
+displayScore.innerHTML = points //update inner html to points number variable 
+
+
+function displayLives(lives, heart){
+  const span = document.createElement('span')
+  span.classList.add('displayHearts')
+  document.getElementById(8).appendChild(span)//append to div with id of 8
+  span.innerHTML = (`${heart}`.repeat( `${lives}`)) 
+}
+
+displayLives(lives, heart)
+
+
+function displayTimer () {
+  const displayTimer = document.querySelector('.timer')//introduce the timer cell to JS
+
+  let startTime = 90//90 seconds start
+  let intervalId = 0
+  
+  intervalId = setInterval(() => {
+    if (startTime < 0){
+      clearInterval(intervalId)
+      displayTimer.innerHTML = 'out of time!'
+    }
+    else{
+      displayTimer.innerHTML = startTime--
+    }
+  }, 1000)
+}
+
 
 //? Put frog on board and make him move
 cells[playerPosition].classList.remove('frog')
@@ -164,7 +194,6 @@ function moveCars() { //cars loop through
 
 moveCars()
 
-  
 
 
 

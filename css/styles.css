@@ -60,8 +60,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-
 }
 
 .carL, .carR{
@@ -71,9 +69,9 @@ body {
 .log {
   background-color:saddlebrown;
 }
-.frogOnLog {
+/* .frogOnLog {
 
-}
+} */
 
 .lives{
   display: flex;

@@ -9,6 +9,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin: 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .grid {
@@ -21,8 +22,8 @@ body {
 }
 
 .cell {
-  border: 1px solid green;
-  font-size: 25px;
+  /* border: 1px solid whitesmoke; */
+  font-size: 2em;
 }
 
 .grid .frog {
@@ -31,7 +32,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.frogReachedHome {
+.cell.frogReachedHome {
   background-image:url('https://www.flaticon.com/svg/vstatic/svg/346/346262.svg?token=exp=1610989765~hmac=d7c77c9ffce011a975d3181713eba879');
   background-size: contain;
   background-repeat: no-repeat;
@@ -52,23 +53,34 @@ body {
 }
 
 .home {
-  background-color: green;
-  border-radius: 50%;
+  background-image: url('https://www.vhv.rs/dpng/d/146-1465016_lily-pad-water-lily-leaf-clipart-hd-png.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  
 }
 
-.timer, .points, .lives {
+.countdown, .points, .lives {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.carL, .carR{
-  background-color: hotpink;
+.carL{
+  background-image: url('https://www.flaticon.com/svg/vstatic/svg/744/744465.svg?token=exp=1611078583~hmac=0dbdb6a9242d44c1387298b016a4cadd');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.log {
-  background-color:saddlebrown;
+.carR{
+  background-image: url('https://www.flaticon.com/svg/vstatic/svg/744/744506.svg?token=exp=1611078566~hmac=e93d5518868dd2421d403d55b5aa6fa2');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
+.logL, .logR {
+  background-color: chocolate;
+}
+
 /* .frogOnLog {
 
 } */

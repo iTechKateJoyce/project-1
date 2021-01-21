@@ -2,6 +2,37 @@
   box-sizing: border-box;
 }
 
+#overlay{
+  position: fixed;
+  background-color: #446630;
+  /* display: none; */
+  width: 900px;
+  height: 1400px;
+  z-index: 2;
+
+}
+
+#text{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 7em;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #28ff0d;
+  font-family: 'Anton', sans-serif;
+  text-shadow: 10px 6px 3px #4550a1;
+}
+
+#p{
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  font-size: 2.5em;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -10,13 +41,15 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  color: #28ff0d;
+  background-color: #8c52ff;
 }
 
 .grid {
   display: flex;
   flex-direction: row;
   border: 1px solid grey;
-  width: 700px;
+  width: 900px;
   height: 1400px;
   flex-wrap: wrap;
 }
@@ -27,13 +60,14 @@ body {
 }
 
 .grid .frog {
-  background-image: url('https://www.flaticon.com/svg/vstatic/svg/346/346211.svg?token=exp=1610987875~hmac=54b41eb2ce031df8cadf678caefcbec6');
+  background-image: url('images/frog.png');
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .cell.frogReachedHome {
-  background-image:url('https://www.flaticon.com/svg/vstatic/svg/346/346262.svg?token=exp=1610989765~hmac=d7c77c9ffce011a975d3181713eba879');
+  background-image: url('images/frog.png');
   background-size: contain;
   background-repeat: no-repeat;
   
@@ -41,21 +75,30 @@ body {
 
 .road {
   background-color: rgb(208, 203, 203);
+  /* background-image: url('https://4.bp.blogspot.com/-uc0zj2HlCwE/Tt-xl5k1XjI/AAAAAAAAAdk/5rAdxkcA9Zg/s1600/Road+2.jpg'); */
 }
 
 .river {
-  background-color: rgb(0, 217, 255);
+  background-color: #1fc8c4;
 }
 
 .statusBar {
-  background-color: black;
-  color: beige;
+  background-color: #446630;
+  color: #28ff0d;
 }
 
 .home {
-  background-image: url('https://www.vhv.rs/dpng/d/146-1465016_lily-pad-water-lily-leaf-clipart-hd-png.png');
+  /* background-image: url('https://www.vhv.rs/dpng/d/146-1465016_lily-pad-water-lily-leaf-clipart-hd-png.png'); */
   background-size: contain;
   background-repeat: no-repeat;
+  background-color:#1fc8c4;
+  
+}
+
+.sidewalk {
+  background-image: url('images/pebbletexture.png');
+  background-color: #545454;
+  background-size: contain;
   
 }
 
@@ -63,34 +106,64 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #446630;
 }
 
 .carL{
-  background-image: url('https://www.flaticon.com/svg/vstatic/svg/744/744465.svg?token=exp=1611078583~hmac=0dbdb6a9242d44c1387298b016a4cadd');
+  background-image: url('images/carleft.png');
   background-repeat: no-repeat;
   background-size: contain;
+
 }
 
 .carR{
-  background-image: url('https://www.flaticon.com/svg/vstatic/svg/744/744506.svg?token=exp=1611078566~hmac=e93d5518868dd2421d403d55b5aa6fa2');
+  background-image: url('images/carright.png');
   background-repeat: no-repeat;
+  background-size: contain; 
+}
+
+.logR {
+  background-image: url('images/turtleRight.png');
   background-size: contain;
+  background-color: #1fc8c4;
+  background-repeat: no-repeat
 }
 
-.logL, .logR {
-  background-color: chocolate;
+.logL{
+  background-image: url('images/turtleLeft.png');
+  background-size: contain;
+  background-color: #1fc8c4;
+  background-repeat: no-repeat
+
 }
 
-/* .frogOnLog {
+.result {
+  font-size: x-large;
+  color: #28ff0d;
+  font-family: 'Anton', sans-serif;
+  position: absolute;
+  font-size: 2.5em;
+  text-shadow: 5px 3px 2px #4550a1;
 
-} */
+}
 
 .lives{
   display: flex;
   flex-direction: column;
 }
 .displayHearts{
-  display: flex;
-  flex-direction: row;
-  width: 100px;
+  display: block;
+  position: absolute;
+}
+
+h1{
+  color: lightgreen;
+  font-size: 7em;
+}
+
+.roadmarkings {
+  width: 887px;
+  position: absolute;
+  top: 1108px;
+  border-top: dashed 13px #ffd900;
 }

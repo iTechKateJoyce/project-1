@@ -15,8 +15,17 @@ const carsRight = [72, 75, 78]//indicies of car starting point
 const carsLeft = [62, 59, 56]//indicies of car starting point
 const logsRight = [42, 41, 40, 38, 37, 36, 24, 23, 22, 20, 19, 18]// bothlanes
 const logsLeft = [28, 29, 30, 33, 34, 35]
+let time = 90
 
-let time = 90//90 seconds start
+document.addEventListener('keyup', (event) => {
+  const startKey = event.key
+  if(startKey === 'Enter'){
+    document.getElementById("overlay").style.display = 'none'
+    document.getElementById("text").style.display = 'none'
+    document.getElementById("p").style.display = 'none'
+  // console.log('you pressed enter')
+  }
+})
 
 function generateGrid (grid, gridStyling) {//generate the grid 
   for (let index = 0; index < width * height; index++) {
@@ -27,58 +36,61 @@ function generateGrid (grid, gridStyling) {//generate the grid
     cells.push(cell)
     // cell.innerHTML = index // Number each cell by its index.
     cell.id = index //adds an individual id to each cell - remove if N/A
-    // Set the width and height of my cells
+    // Set the width and height of grid cells
     cell.style.width = `${100 / width}%`
     cell.style.height = `${100 / height}%`
     gridStyling(index, cell)//adds background styling to grid cells 
-    displayTimer()//displays countdown timer in grid
   }
 
 }
 function gridStyling(index, cell) {//adds grid styling/classes to cells
-  if(index >= 54 && index <= 89){ //add road styling
+  if(index === 0){ //add timer class to cell
+    cell.classList.add('countdown')
+  }
+  else if(index >= 54 && index <= 89){ //add road styling
     cell.classList.add('road')
+  }
+  else if(index <= 53 && index >= 45){
+    cell.classList.add('sidewalk')
   }
   else if(index <= 44 && index >= 18){//adds river styling to grid
     cell.classList.add('river')
   }
-  else if(index <= 107 && index >= 99){  //add status bar
-    cell.classList.add('statusBar')
-  }
   else if(index === 11 || index === 13 || index === 15){//adds home cells, these give you points if you reach them
     cell.classList.add('home')
-
   }
-  else if(index === 0){ //add timer class to cell
-    cell.classList.add('countdown')
-  }
-  else if(index === 4){  //add points class to cell and display starting points
+  else if(index === 8){  //add points class to cell and display starting points
     cell.classList.add('points')
     const displayScore = document.querySelector('.points')//grabs the points cell element
     displayScore.innerHTML = `Score ${points}`
   }
-  else if(index === 8){ //adds lives class to cell 
+  else if(index <= 107 && index >= 90 || index >= 0 && index <= 17){  //add status bar
+    cell.classList.add('statusBar')
+  }
+  else if(index === 106){ //adds lives class to cell 
     cell.classList.add('lives')
   }
+  displayTimer()
 }
 generateGrid(grid, gridStyling) 
 
-const heart = '&#128150;'
-const span = document.createElement('span')
-span.classList.add('displayHearts')
-document.getElementById(8).appendChild(span)
+
+const heart = '&#128154;'
+const heartSpan = document.createElement('span')
+heartSpan.classList.add('displayHearts')
+document.getElementById(106).appendChild(heartSpan)
 
 function displayLives(lives){ //displays current player lives inside .lives div
   
   if(lives > 0){
-  span.innerHTML = (`${heart}`.repeat( `${lives}`))
+    heartSpan.innerHTML = (`${heart}`.repeat( `${lives}`))
   }
   else if(lives <= 0){
-    span.innerHTML = ''
+    heartSpan.innerHTML = ''
   }
 }
 
-function displayTimer () {//displays countdown timer inside div
+function displayTimer () {//displays countdown timer
   const displayTimer = document.querySelector('.countdown')//introduce the timer cell to JS
   let time = 90//90 seconds start
   displayTimer.innerHTML = time
@@ -86,7 +98,7 @@ function displayTimer () {//displays countdown timer inside div
   intervalId = setInterval(() => {
     if (time <= 0){
       clearInterval(intervalId)
-      displayTimer.innerHTML = 'out of time!'
+      displayTimer.innerHTML = '0'
     }
     else{
       displayTimer.innerHTML = time--
@@ -123,8 +135,6 @@ document.addEventListener('keyup', (event) => {//listens for keyup on arrows to 
       playerPosition -= 1
       cells[playerPosition].classList.add('frog')
     }
-    // lose()
-    // win()
 })
 
 function resetGame (){ 
@@ -139,11 +149,15 @@ homeCells.forEach((home, i) =>{
 cells[playerPosition].classList.remove('frog')//remove frog
 playerPosition = 94
 cells[playerPosition].classList.add('frog')
-
   }
+
+const result = document.createElement('span')
+result.classList.add('result')
+document.getElementById(102).appendChild(result)
+
 function win (){
   if(points >= 3000){
-    console.log('WINNER!')
+    result.innerHTML = 'Winner'
     //add time bonus = points plus timervalue
     resetGame()
     
@@ -159,37 +173,35 @@ function win (){
   const displayScore = document.querySelector('.points')//grabs the points cell element
   displayScore.innerHTML = `Score ${points}` // updates the innerHTML to current points
 }
-function lose(lives) {
+function lose() {
   if(time === 0 || lives === 0){
-    console.log('you lose')
-    cells[playerPosition].classList.remove('frog')//remove frog
-    playerPosition = 94
-    cells[playerPosition].classList.add('frog')
+    // cells[playerPosition].classList.remove('frog')//remove frog
+    // playerPosition = 94
+    // cells[playerPosition].classList.add('frog')
+    result.innerHTML = 'Try again!'
     resetGame()
   }
   // else if(cells[playerPosition].classList.contains('river')){
   else if(cells[playerPosition].className === 'cell river frog'){
-    console.log('drowned')
     lives--
+    displayLives(lives)
     cells[playerPosition].classList.remove('frog')//remove frog
     playerPosition = 94
     cells[playerPosition].classList.add('frog')
+    console.log('just died and lives are', lives)
   }
   else if(cells[playerPosition].classList.contains('carR') || cells[playerPosition].classList.contains('carL')){
-    console.log('dead')
     lives--
     displayLives(lives)
     cells[playerPosition].classList.remove('frog')//remove frog
     playerPosition = 94
     cells[playerPosition].classList.add('frog')
   }
-  
 }
 
 logsRight.forEach(log => {
   cells[log].classList.add('logR')
 })
-
 
 function moveLogRight() {
   logsRight.forEach((log, i) => {
@@ -277,18 +289,16 @@ function frogOnLog (){// --is there a way of importing that log logic here? log 
 
 
 function moveStuff() { //one second loop for cars, could also add logs and potentially win/lose funcs too
-  setInterval(() => {
-    
+  const intervalIDMS = setInterval(() => {
     moveLogRight()
     moveLogLeft()
     frogOnLog()
     moveCarRight()
     moveCarLeft()
     win()
-    lose(lives)
-  }, 1000)
+    lose()
+  }, 800)
 }
 
 moveStuff()
-
 

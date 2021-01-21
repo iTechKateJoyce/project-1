@@ -88,7 +88,6 @@ body {
 }
 
 .home {
-  /* background-image: url('https://www.vhv.rs/dpng/d/146-1465016_lily-pad-water-lily-leaf-clipart-hd-png.png'); */
   background-size: contain;
   background-repeat: no-repeat;
   background-color:#1fc8c4;
@@ -96,9 +95,9 @@ body {
 }
 
 .sidewalk {
-  background-image: url('images/pebbletexture.png');
+  /* background-image: url('images/grass.jpg'); */
   background-color: #545454;
-  background-size: contain;
+  background-size: cover;
   
 }
 
@@ -166,4 +165,8 @@ h1{
   position: absolute;
   top: 1108px;
   border-top: dashed 13px #ffd900;
+}
+
+.grass {
+  background-image: url('images/grass.jpg');
 }

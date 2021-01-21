@@ -17,13 +17,14 @@ const logsRight = [42, 41, 40, 38, 37, 36, 24, 23, 22, 20, 19, 18]// bothlanes
 const logsLeft = [28, 29, 30, 33, 34, 35]
 let time = 90
 
+//Game overlay - press enter to play
 document.addEventListener('keyup', (event) => {
   const startKey = event.key
   if(startKey === 'Enter'){
     document.getElementById("overlay").style.display = 'none'
     document.getElementById("text").style.display = 'none'
     document.getElementById("p").style.display = 'none'
-  // console.log('you pressed enter')
+  
   }
 })
 
@@ -44,7 +45,7 @@ function generateGrid (grid, gridStyling) {//generate the grid
 
 }
 function gridStyling(index, cell) {//adds grid styling/classes to cells
-  if(index === 0){ //add timer class to cell
+  if(index === 100){ //add timer class to cell
     cell.classList.add('countdown')
   }
   else if(index >= 54 && index <= 89){ //add road styling
@@ -59,21 +60,23 @@ function gridStyling(index, cell) {//adds grid styling/classes to cells
   else if(index === 11 || index === 13 || index === 15){//adds home cells, these give you points if you reach them
     cell.classList.add('home')
   }
+  else if(index === 9 || index === 10 || index === 12 ||index === 14 || index === 16 || index === 17){
+    cell.classList.add('grass')
+  }
   else if(index === 8){  //add points class to cell and display starting points
     cell.classList.add('points')
     const displayScore = document.querySelector('.points')//grabs the points cell element
     displayScore.innerHTML = `Score ${points}`
   }
-  else if(index <= 107 && index >= 90 || index >= 0 && index <= 17){  //add status bar
-    cell.classList.add('statusBar')
+  else if(index <= 107 && index >= 90 || index >= 0 && index <= 8){  //add status bar
+    cell.classList.add('statusBar')//get rid of home row extras 
   }
   else if(index === 106){ //adds lives class to cell 
     cell.classList.add('lives')
   }
-  displayTimer()
 }
-generateGrid(grid, gridStyling) 
-
+generateGrid(grid, gridStyling)
+displayTimer() 
 
 const heart = '&#128154;'
 const heartSpan = document.createElement('span')
@@ -301,4 +304,3 @@ function moveStuff() { //one second loop for cars, could also add logs and poten
 }
 
 moveStuff()
-

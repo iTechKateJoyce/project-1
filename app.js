@@ -1,8 +1,3 @@
-/* 
-Local variables
-const displayScore = document.querySelector('.points')//grabs the points cell element
-displayScore.innerHTML = `Score ${points}`  
-*/
 let lives = 3  
 let points = 0 
 let playerPosition = 93 //relates to index of cell array where player starts on the board, will be used to keep track of the frog too
@@ -101,10 +96,10 @@ function displayTimer () {//displays countdown timer
   intervalId = setInterval(() => {
     if (time <= 0){
       clearInterval(intervalId)
-      displayTimer.innerHTML = '0'
+      displayTimer.innerHTML = '0s'
     }
     else{
-      displayTimer.innerHTML = time--
+      displayTimer.innerHTML = (`${time--}s`)
     }
   }, 900)
 }
@@ -162,6 +157,7 @@ function win (){
   if(points >= 3000){
     result.innerHTML = 'Winner'
     //add time bonus = points plus timervalue
+
     resetGame()
     
   }
@@ -290,6 +286,14 @@ function frogOnLog (){// --is there a way of importing that log logic here? log 
       }
 }
 
+function ruleCheck(){
+  const intervalIDRS = setInterval(() => {
+    win()
+    lose()
+  }, 400)
+
+}
+
 
 function moveStuff() { //one second loop for cars, could also add logs and potentially win/lose funcs too
   const intervalIDMS = setInterval(() => {
@@ -298,9 +302,8 @@ function moveStuff() { //one second loop for cars, could also add logs and poten
     frogOnLog()
     moveCarRight()
     moveCarLeft()
-    win()
-    lose()
   }, 800)
 }
 
 moveStuff()
+ruleCheck()

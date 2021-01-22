@@ -52,6 +52,7 @@ body {
   width: 900px;
   height: 1400px;
   flex-wrap: wrap;
+  background-color: #446630;
 }
 
 .cell {
@@ -101,7 +102,7 @@ body {
   
 }
 
-.countdown, .points, .lives {
+.points, .lives {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,6 +120,7 @@ body {
   background-image: url('images/carright.png');
   background-repeat: no-repeat;
   background-size: contain; 
+  transition: width 1s ease-in-out
 }
 
 .logR {
@@ -129,7 +131,7 @@ body {
 }
 
 .logL{
-  background-image: url('images/turtleLeft.png');
+  background-image: url('images/fishLeft.png');
   background-size: contain;
   background-color: #1fc8c4;
   background-repeat: no-repeat

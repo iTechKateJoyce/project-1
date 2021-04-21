@@ -30,9 +30,10 @@ Frogger was the very first project as part of the GA software Engineering immers
 * Git and GitHub
 * Google Fonts
 
-## Game demo
+## Game demo ADD IMAGES || GIF HERE 
+![Screenshot 2021-04-06 at 16 35 28](https://user-images.githubusercontent.com/68645584/115590890-66196a80-a2c9-11eb-93d2-d7234c6939a6.png)
+<img width="1173" alt="Screenshot 2021-04-20 at 17 41 07" src="https://user-images.githubusercontent.com/68645584/115590931-76314a00-a2c9-11eb-9652-6774235dfdd6.png">
 
-ADD IMAGES || GIF HERE 
 
 ## Approach 
 I started by whiteboarding out the rules of the game and the functionalities it should include for the MVP and any stretch goals too. The week was then divided into mini deadlines including delivery of  MVP, time for stretch goals and styling. 
@@ -146,5 +147,5 @@ ruleCheck()
 * The overlay was simpler to implement than I initially thought
 * Getting the main game logic working to win and lose
 
-Key learnings
+## Key learnings
 * Building my first JavaScript game from scratch was a great learning experience and a fun way to practise working with DOM manipulation, different array methods and timers.

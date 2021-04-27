@@ -34,7 +34,6 @@ Frogger was the very first project as part of the GA software Engineering immers
 ![Screenshot 2021-04-06 at 16 35 28](https://user-images.githubusercontent.com/68645584/115590890-66196a80-a2c9-11eb-93d2-d7234c6939a6.png)
 <img width="1173" alt="Screenshot 2021-04-20 at 17 41 07" src="https://user-images.githubusercontent.com/68645584/115590931-76314a00-a2c9-11eb-9652-6774235dfdd6.png">
 
-
 ## Approach 
 I started by whiteboarding out the rules of the game and the functionalities it should include for the MVP and any stretch goals too. The week was then divided into mini deadlines including delivery of  MVP, time for stretch goals and styling. 
 
@@ -93,16 +92,14 @@ function gridStyling(index, cell) {//adds grid styling/classes to cells
 ```
 ### Moving parts
 #### Frog
-The player starting position was defined inside a variable according to the grid index. It's possible to move the frog using arrow keys, this code sat inside an event listener and used DOM manipulation to add and remove the frog class from grid cells. In order to actually move the frog the playerPosition was updated using width or a number.
-The boundary logic was included here to stop the frog from moving "through the walls". Also, whilst planning it was helpful to visually see the cell index to plan movement and boundary logic.
+The player starting position was defined inside a variable according to the grid index, whilst building it was helpful to see the cell indexes to plan movement and boundary logic. It's possible to move the frog using arrow keys, this code sat inside an event listener and used DOM manipulation to add and remove the frog class from grid cells. In order to actually move the frog the playerPosition was updated using width or a number.The boundary logic was included to stop the frog from moving "through the walls". 
 
 #### Cars and creatures
 The traffic, turtles and fish movement is all automated. This was done using functions called inside a set interval to create the movement. See examples below:
 The starting indices of the cars were saved in an array and the car class was added using forEach to iterate over each starting point. Next,  the moveCarRight function, which is called inside a setInterval, adds and removes the car class to mimicking movement across the road. When the car moves right until it hits a wall boundary it resets.
 
 #### Collision detection
-In this game the frog loses a life by either getting hit by a car or by falling in the water. If the frog collides with these dangers one life is removed and the player position is reset to the starting point.
-The lose function checks if the frog cell contains river or a car, if so, the frog loses a life. If the player has 0 lives or the time runs out then they lose the game.
+In this game the frog loses a life by either getting hit by a car or by falling in the water. If the frog collides with these dangers one life is removed and the player position is reset to the starting point.The lose function checks if the frog cell contains river or a car, if so, the frog loses a life. If the player has 0 lives or the time runs out then they lose the game.
 
 ## Challenges
 The main challenge was moving obstacles and detecting collision, to achieve this there were a number of functions inside a setInterval timer.
@@ -135,7 +132,8 @@ ruleCheck()
 ## Bugs
 * Sometimes the frog drops off their turtle, this is to do with the way the movement was programmed. Occasionally, the log is removed before the frog is moved onto the cell resulting in the frog "dropping off" and losing a life.
 * The car collision detection can be somewhat slow off the mark to recognise that the frog is in the same cell as the car. 
-*  Currently, you have to zoom out to 50% to view the grid as it should be
+*  Currently, you have to zoom out to 50% to view the grid as it should be.
+
 ## Suggested enhancements
 * Refactor the code!
 * Additional levels, each one increasing in difficulty
@@ -143,9 +141,9 @@ ruleCheck()
 * Randomised lucky coin to move across the page for extra points
 * CSS animations to achieve a more impactful design 
 
-## Wins 
-* The overlay was simpler to implement than I initially thought
-* Getting the main game logic working to win and lose
 
 ## Key learnings
 * Building my first JavaScript game from scratch was a great learning experience and a fun way to practise working with DOM manipulation, different array methods and timers.
+* I was super happy to get the main game logic working to win and lose 
+* The CSS overlay was simpler to implement than I initially thought.
+

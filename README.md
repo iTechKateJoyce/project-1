@@ -6,6 +6,10 @@ Frogger was the very first project as part of the GA software Engineering immers
 
 🔗 https://kate1562.github.io/project-1/ 
 
+## Game demo 
+![frogger](https://user-images.githubusercontent.com/68645584/117049803-8b1bcd80-ad0c-11eb-915a-9ea9a6c222c5.gif)
+
+
 ## Brief & Timeframe:
 * Build a game individually.
 * Be creative.
@@ -29,10 +33,6 @@ Frogger was the very first project as part of the GA software Engineering immers
 * JavaScript (ES6)
 * Git and GitHub
 * Google Fonts
-
-## Game demo ADD IMAGES || GIF HERE 
-![Screenshot 2021-04-06 at 16 35 28](https://user-images.githubusercontent.com/68645584/115590890-66196a80-a2c9-11eb-93d2-d7234c6939a6.png)
-<img width="1173" alt="Screenshot 2021-04-20 at 17 41 07" src="https://user-images.githubusercontent.com/68645584/115590931-76314a00-a2c9-11eb-9652-6774235dfdd6.png">
 
 ## Approach 
 I started by whiteboarding out the rules of the game and the functionalities it should include for the MVP and any stretch goals too. The week was then divided into mini deadlines including delivery of  MVP, time for stretch goals and styling. 

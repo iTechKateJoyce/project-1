@@ -6,8 +6,8 @@
   position: fixed;
   background-color: #446630;
   /* display: none; */
-  width: 900px;
-  height: 1400px;
+  width: 450px;
+  height: 700px;
   z-index: 2;
 
 }
@@ -16,7 +16,7 @@
   position: absolute;
   top: 45%;
   left: 50%;
-  font-size: 7em;
+  font-size: 3.5em;
   transform: translate(-50%, -50%);
   z-index: 2;
   color: #28ff0d;
@@ -28,7 +28,7 @@
   position: absolute;
   top: 52%;
   left: 50%;
-  font-size: 2.5em;
+  font-size: 1.5em;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
@@ -49,15 +49,15 @@ body {
   display: flex;
   flex-direction: row;
   border: 1px solid grey;
-  width: 900px;
-  height: 1400px;
+  width: 450px;
+  height: 700px;
   flex-wrap: wrap;
   background-color: #446630;
 }
 
 .cell {
   /* border: 1px solid whitesmoke; */
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .grid .frog {
@@ -160,13 +160,6 @@ body {
 h1{
   color: lightgreen;
   font-size: 7em;
-}
-
-.roadmarkings {
-  width: 887px;
-  position: absolute;
-  top: 1108px;
-  border-top: dashed 13px #ffd900;
 }
 
 .grass {

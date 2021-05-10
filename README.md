@@ -14,7 +14,7 @@ Frogger was the very first project as part of the GA software Engineering immers
 * Build a game individually.
 * Be creative.
 * Render a game in the browser.
-* Design logic for winning & visually display the winner
+* Design logic for winning & visually display the winner.
 * Include separate HTML / CSS / JavaScript files.
 * Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles.
 * Use JavaScript for DOM manipulation.
@@ -25,7 +25,7 @@ Frogger was the very first project as part of the GA software Engineering immers
 * The aim of the game is to guide a frog across a road, and a river to its home at the top of the screen.
 * Must detect any collision (e.g. with cars and river).
 * Timers should be present.
-* Timeframe : 1 week
+* Timeframe : 1 week.
 
 ## Technologies used
 * HTML5
@@ -132,7 +132,6 @@ ruleCheck()
 ## Bugs
 * Sometimes the frog drops off their turtle, this is to do with the way the movement was programmed. Occasionally, the log is removed before the frog is moved onto the cell resulting in the frog "dropping off" and losing a life.
 * The car collision detection can be somewhat slow off the mark to recognise that the frog is in the same cell as the car. 
-*  Currently, you have to zoom out to 50% to view the grid as it should be.
 
 ## Suggested enhancements
 * Refactor the code!

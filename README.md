@@ -135,14 +135,14 @@ ruleCheck()
 
 ## Suggested enhancements
 * Refactor the code!
-* Additional levels, each one increasing in difficulty
-* High score board using localStorage
-* Randomised lucky coin to move across the page for extra points
-* CSS animations to achieve a more impactful design 
+* Additional levels, each one increasing in difficulty.
+* High score board using localStorage.
+* Randomised lucky coin to move across the page for extra points.
+* CSS animations to achieve a more impactful design. 
 
 
 ## Key learnings
 * Building my first JavaScript game from scratch was a great learning experience and a fun way to practise working with DOM manipulation, different array methods and timers.
-* I was super happy to get the main game logic working to win and lose 
+* I was super happy to get the main game logic working to win and lose. 
 * The CSS overlay was simpler to implement than I initially thought.
 
